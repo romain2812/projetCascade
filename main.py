@@ -10,6 +10,12 @@ def afficher_grille(grille):
 
 
 
+def demanderUneCase():
+    ligne = input("saisissez une ligne: ")
+    colonne = input("saisissez une colonne: ")
+    
+
+
 
 
 def depart():
