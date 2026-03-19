@@ -74,11 +74,17 @@ def main():
             fin()
     
 def est_au_bon_format(message):
-    ...
+    return len(message)==2 and message[0] in ['A','B','C','D','E'] and message[1] in ['1','2','3','4','5']
 
-
-def est_dans_grille():
-    ...
-
+def est_dans_grille(ligne, colonne, grille):
+    convNbLettre ={'A':0,'B':1,'C':2,'D':3,'E':4}
+    return len(grille)>convNbLettre[ligne] and len(grille)>colonne-1
+    
+grille = [[" ","X","O","X","X"],
+              [" "," "," ","O","X"],
+              ["X"," "," "," "," "],
+              ["O"," ","X"," ","X"],
+              ["O","O","O"," ","O"]]
+print(est_dans_grille("A",6,grille))
 
 main()
