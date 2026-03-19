@@ -1,10 +1,12 @@
 
 def afficher_grille(grille):
     print("______________________________")
+    print("    1  2  3  4  5")
     for i in range(len(grille)):
+        print(i, end=" ")
         for j in range(len(grille[0])):
             if j == len(grille[0])-1:
-                print(f"|{grille[i][j]}|")
+                print(f"|{grille[i][j]} |")
             else:
                 print(f"|{grille[i][j]}", end=" ")
 
