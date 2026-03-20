@@ -39,7 +39,7 @@ def test_est_dans_grille():
     assert est_dans_grille("A",1,grille_deput),"dans la grille doit renvoyer True."
     assert not est_dans_grille("1",1,grille_deput),"mauvais format doit revoyer False."
     assert not est_dans_grille("A",7,grille_deput),"ligne dans la grille, mais collone en dehors doit renvoyer False."
-    assert not est_dans_grille("B",1,grille_deput),"ligne en dehors de la grille et collene dedans doit renvoyer False."
+    assert not est_dans_grille("T",1,grille_deput),"ligne en dehors de la grille et collene dedans doit renvoyer False."
     assert not est_dans_grille("F",11,grille_deput),"ligne en dehors de la grille et collone en dehors doit renvoyer False."
     
 
@@ -52,8 +52,17 @@ def est_dans_grille(ligne:str, colonne:int, grille:list)->bool:
     return len(grille)>convNbLettre[ligne] and len(grille)>colonne-1
 
 ###fonctions de saisie
-def saisir_coordonnees() :
-    ...
+def saisir_coordonnees(grille):
+    cherche_coordonnees = True
+    while cherche_coordonnees:
+        coordonnees = input("choisicer des coordoner: ")
+        if len(coordonnees)!=2:
+            continue
+        elif not est_dans_grille(coordonnees[0],int(coordonnees[1]),grille):
+            continue
+        else:
+            return coordonnees
+
 
 #### CODE PRINCIPAL
 # execution affichage sur les 3 grilles et autres variables de jeux
@@ -65,4 +74,4 @@ afficher_grille(grille_fin)
 test_est_dans_grille() #uniquement pour la mise au point, a conserver pour le correcteur
 
 #affichage des coordonnees saisies
-print(saisir_coordonnees( ... ))
+print(f"les coordonnees saisit sont: {saisir_coordonnees(grille_deput)}")
