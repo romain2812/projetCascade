@@ -1,18 +1,24 @@
 # -*- coding: utf-8 -*- ## Pour s’assurer de la compatiblite entre correcteurs
 #### REPRESENTATION DES DONNEES
 ###initialisation des grilles et autres variables de jeu
+
+
+# grille qui represente la position initiale.
 grille_deput = [["X","X","X","X","X"],
               ["X"," "," "," ","X"],
               [" "," "," "," "," "],
               ["O"," "," "," ","O"],
               ["O","O","O","O","O"]]
 
+
+# grille qui represente une position possible au millieu de la partie.
 grille_millieu = [[" ","X","O","X","X"],
                   [" "," "," ","O","X"],
                   ["X"," "," "," "," "],
                   ["O"," ","X"," ","X"],
                   ["O","O","O"," ","O"]]
 
+#grille qui represente une position possible a la fin de la partie.
 grille_fin =[[" "," ","X","O","X"],
              ["X"," ","O"," ","O"],
              [" "," ","O","O","X"],
